@@ -113,7 +113,7 @@ int main() {
     setlocale(LC_ALL, "es_ES.UTF-8");
 
     Especialidad herramienta("Herramienta especial", "Descripción de la herramienta", 100, "Código de la herramienta", "Nombre del fabricante",
-                             "Material de la herramienta", 10.0, 5.0, 12.0, 50.0, "Tipo de batería", 250.0, "Tipo de cilindro", "Especialidad de la herramienta");
+    "Material de la herramienta", 10.0, 5.0, 12.0, 50.0, "Tipo de batería", 250.0, "Tipo de cilindro", "Especialidad de la herramienta");
 
     herramienta.mostrarInformacion();
     herramienta.mostrarCaracteristicas();

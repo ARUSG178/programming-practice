@@ -1,5 +1,5 @@
 /*Escriba un algoritmo que tome como entrada una secuencia de números 0 y 1 terminada en −1 que representan un número binario
- y calcule el número decimal representado. Por ejemplo, si la secuencia es 1 0 0 1 0 1 -1, su algoritmo debe imprimir 37.*/
+ y calcule el número decimal representfado. Por ejemplo, si la secuencia es 1 0 0 1 0 1 -1, su algoritmo debe imprimir 37.*/
 
 #include <iostream>
 #include <cmath>

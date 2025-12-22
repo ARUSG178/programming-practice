@@ -8,6 +8,7 @@ int main(){
 
     int numero, numero_i = 0;
 
+    cout << "uwuwuwuwu" << endl;
     cin >> numero;
     int aux = numero;
 

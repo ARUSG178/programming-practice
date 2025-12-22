@@ -1,76 +1,83 @@
 #include <iostream>
-#include <stdexcept> // Para std::runtime_error, usado en errores de pila vacía
+#include <stdexcept> // Incluye la librería para el manejo de excepciones (runtime_error).
 
-template <typename T>
+using namespace std;
+
+template <typename T> // Define una plantilla para que la pila acepte cualquier tipo de dato (int, float, etc.).
 class Stack {
 private:
     struct Node {
-        T data;
-        Node* next;
-        Node(const T& d, Node* nxt = nullptr) : data(d), next(nxt) {} // Constructor de un nodo
+        T data;     // El valor que almacena el nodo.
+        Node* next; // Puntero que guarda la dirección del nodo que está "debajo" en la pila.
+        
+        // Constructor del nodo: asigna el valor y conecta con el siguiente nodo.
+        Node(const T& d, Node* nxt = nullptr) : data(d), next(nxt) {} 
     };
 
-    Node* topNode; // Puntero al elemento superior de la pila
-    int count;     // Número de elementos en la pila
+    Node* topNode; // Puntero principal que siempre apunta al nodo superior (la cima).
+    int count;     // Contador entero para llevar el control del tamaño sin recorrer la pila.
 
 public:
-    Stack() : topNode(nullptr), count(0) {} // Constructor: inicializa una pila vacía
+    // Constructor de la pila: inicializa el puntero en nulo y el contador en cero.
+    Stack() : topNode(nullptr), count(0) {} 
 
+    // Destructor: se ejecuta automáticamente al final para limpiar toda la memoria dinámica.
     ~Stack() {
-        clear(); // Destructor: libera la memoria de todos los nodos
+        clear(); 
     }
 
     void clear() {
-        while (topNode != nullptr) { // Elimina todos los elementos de la pila
-            Node* temp = topNode;
-            topNode = topNode->next;
-            delete temp;
+        // Mientras el puntero de la cima no sea nulo, sigue borrando.
+        while (topNode != nullptr) { 
+            Node* temp = topNode;    // Guarda la dirección del nodo actual para no perderla.
+            topNode = topNode->next; // Mueve la cima al nodo de abajo.
+            delete temp;             // Libera la memoria física del nodo que acabamos de "saltar".
         }
-        count = 0;
+        count = 0; // Reinicia el contador a cero tras vaciar todo.
     }
 
     void push(const T& value) {
-        Node* newNode = new Node(value, topNode);       // Crea un nuevo nodo y lo enlaza al actual top
-        topNode = newNode;                              // El nuevo nodo se convierte en el top
-        count++;                                        // Incrementa el tamaño
+        // Crea un nuevo nodo en memoria; su 'next' apuntará al actual topNode.
+        Node* newNode = new Node(value, topNode); 
+        topNode = newNode; // El nuevo nodo pasa a ser oficialmente la nueva cima.
+        count++;           // Incrementa el tamaño de la pila.
     }
 
     void pop() {
-        if (isEmpty()) { // Verifica si la pila está vacía antes de intentar sacar un elemento
+        if (isEmpty()) { // Validación de seguridad: no puedes sacar nada de una pila vacía.
             throw std::runtime_error("Error: Intentando pop de una pila vacia.");
         }
-        Node* toDelete = topNode;           // Guarda el nodo actual para eliminarlo
-        topNode = topNode->next;            // El siguiente nodo se convierte en el nuevo top
-        delete toDelete;                    // Libera la memoria del nodo anterior
-        count--;                            // Decrementa el tamaño
+        Node* toDelete = topNode; // Marcamos el nodo de arriba para morir.
+        topNode = topNode->next;  // La cima ahora es el que estaba debajo.
+        delete toDelete;          // Borramos físicamente el nodo de la memoria.
+        count--;                  // Decrementamos el tamaño.
     }
 
     T top() {
-        if (isEmpty()) { // Verifica si la pila está vacía antes de acceder al top
+        if (isEmpty()) { // Validación: si está vacía, no hay dato que retornar.
             throw runtime_error("Error: Intentando acceder al top de una pila vacia.");
         }
-        return topNode->data; // Retorna el dato del elemento superior
+        return topNode->data; // Retorna el valor guardado en el nodo de la cima.
     }
 
-    // Retorna el número de elementos
+    // Retorna el valor actual de 'count' (complejidad O(1), muy rápido).
     int getSize() const { 
         return count;
     }
 
-    // Verifica si la pila está vacía
+    // Retorna verdadero si count es 0, falso si tiene elementos.
     bool isEmpty() const { 
         return count == 0;
     }
 
-    // Imprime la pila
-    void print(){
-        Node* current = top;
-        while(current != nullptr){
-            if(current == top) cout << "top -> "
-            cout << current->data << " -> ";
-            current = current->next;
+    void print() {
+        Node* current = topNode; // Empezamos el recorrido desde la cima.
+        while (current != nullptr) { // Mientras no lleguemos al fondo (null).
+            if (current == topNode) cout << "top -> "; // Marca visual para la cima.
+            cout << current->data << " -> ";           // Imprime el dato del nodo actual.
+            current = current->next;                   // Salta al siguiente nodo hacia abajo.
         }
-        cout << "null" << endl;
+        cout << "null" << endl; // Indica el final de la pila.
     }
 };
 

@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <cmath>
 using namespace std;
@@ -21,6 +22,7 @@ int main(){
 
     int binario;
 
+    cout << "Hola funciono" << endl;
     cin >> binario;
 
     if (binario < 1000 || binario > 1111) return 1;
