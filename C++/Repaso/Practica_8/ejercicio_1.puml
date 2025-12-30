@@ -1,0 +1,25 @@
+@startuml Diagrama_1
+
+class Motor {}
+class Avi as "Avión" {}
+class AviCar as "Avión de Carga" {}
+class Piloto {}
+class AviCo as "Avión Comercial" {}
+class Reserva {}
+class Vuelo {}
+class CompaAe as "Compañía Aérea" {}
+class AviMi as "Avión Militar" {}
+
+'Relaciones con multiplicidades
+Avi "1" *-- "1..*" Motor          ' Un avión tiene uno o varios motores
+Avi <|-- AviCar
+Avi <|-- AviCo
+Avi <|-- AviMi
+
+Avi "1" --> "1..*" Piloto         ' Un avión puede tener uno o varios pilotos
+Vuelo "1" --> "1" Avi             ' Un vuelo usa un avión
+Reserva "1..*" --o "1" CompaAe    ' Una compañía maneja varias reservas
+CompaAe "1" --> "0..*" Vuelo      ' Una compañía organiza cero o muchos vuelos
+Reserva "1" --> "1" Vuelo         ' Una reserva corresponde a un vuelo
+
+@enduml
