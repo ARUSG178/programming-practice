@@ -9,8 +9,12 @@ public class Worker {
         this.salary = salary;
     }
 
-    public String getName() { return name; }
-    public double getSalary() { return salary; }
-    
+    public String getName() {
+        return name;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
 
 }

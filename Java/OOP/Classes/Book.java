@@ -8,5 +8,7 @@ public class Book {
         this.autor = autor;
     }
 
-    public void getInfo() { System.out.println("I'm " + title + "And my autor is: " + autor); }
+    public void getInfo() {
+        System.out.println("I'm " + title + "And my autor is: " + autor);
+    }
 }

@@ -1,16 +1,19 @@
 package OOP.Classes;
 
 public class BankAccount {
-    private double balance; // Ahora es privado (solo accesible desde esta clase)
+    private double balance;
 
-    public BankAccount() { balance = 0; }
+    public BankAccount() {
+        balance = 0;
+    }
 
     public void deposit(double money) {
-        if (money > 0) { // Podemos añadir validaciones de seguridad
+        if (money > 0) {
             balance += money;
         }
     }
-    
-    // Getter: Método público para LEER el saldo sin poder modificarlo directamente
-    public double getBalance() { return balance; }
+
+    public double getBalance() {
+        return balance;
+    }
 }

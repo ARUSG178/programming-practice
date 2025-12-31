@@ -1,6 +1,6 @@
 public class Operators {
-    public static void main (String [] args) {
-    
+    public static void main(String[] args) {
+
         // --- 1. Operadores Aritméticos (Matemáticas básicas) ---
         System.out.println("--- Aritméticos ---");
         int x = 10;
@@ -15,10 +15,10 @@ public class Operators {
         System.out.println("\n--- Asignación ---");
         int num = 5;
         System.out.println("Valor inicial: " + num);
-        
+
         num += 2; // Equivalente a: num = num + 2;
         System.out.println("num += 2 (Suma y asigna): " + num);
-        
+
         num *= 3; // Equivalente a: num = num * 3;
         System.out.println("num *= 3 (Multiplica y asigna): " + num);
 
@@ -27,10 +27,10 @@ public class Operators {
         int contador = 0;
         contador++; // Incrementa en 1
         System.out.println("contador++: " + contador);
-        
+
         contador--; // Decrementa en 1
         System.out.println("contador--: " + contador);
-        
+
         System.out.println("Negación lógica (!true): " + !true); // Invierte booleanos
 
         // --- 4. Operadores de Comparación (Relacionales) -> Devuelven boolean ---
@@ -49,7 +49,7 @@ public class Operators {
 
         // AND (&&): Todo debe ser verdadero
         System.out.println("Hambre && Comida (AND): " + (tengoHambre && hayComida));
-        
+
         // OR (||): Basta con que uno sea verdadero
         System.out.println("Hambre || Comida (OR): " + (tengoHambre || hayComida));
     }

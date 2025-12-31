@@ -1,5 +1,5 @@
 public class FirstExercises { // Corregido el nombre de la clase a la convención de Java (PascalCase) y la
-                             // ortografía.
+                              // ortografía.
     public static void main(String[] args) {
         // 1. Imprimir mensaje que diga tu nombre en lugar de Hola mundo.
         System.out.println("Qlq, me llamo Jesus po"); // Imprime por consola mi nombre
