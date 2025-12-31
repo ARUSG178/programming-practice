@@ -1,6 +1,5 @@
 package data_structure;
 
-
 public class Arrays {
 
     // Clase de ejemplo para el array de objetos

@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "SecondsExcercises",
+            "request": "launch",
+            "mainClass": "basics.SecondsExcercises",
+            "projectName": "Java_da0572c"
+        },
+        {
+            "type": "java",
             "name": "ClassesExercises",
             "request": "launch",
             "mainClass": "OOP.ClassesExercises",

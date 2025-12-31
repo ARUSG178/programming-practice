@@ -1,4 +1,4 @@
-package OOP.Classes;
+package oop.basics;
 
 public class Student {
     double score;
@@ -8,7 +8,7 @@ public class Student {
     }
 
     public boolean aprove() {
-        if (score <= 60)
+        if (score >= 60)
             return true;
         else
             return false;

@@ -1,4 +1,4 @@
-package OOP.Classes;
+package oop.basics;
 
 public class Book {
     String title, autor;

@@ -1,3 +1,5 @@
+package basics;
+
 import java.util.Scanner; // 1. Importar la herramienta
 
 public class ConditionalExercises {

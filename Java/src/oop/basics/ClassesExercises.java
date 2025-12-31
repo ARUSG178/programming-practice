@@ -1,13 +1,5 @@
-package OOP;
-import OOP.Classes.Book;
-import OOP.Classes.Dog;
-import OOP.Classes.Car;
-import OOP.Classes.Student;
-import OOP.Classes.BankAccount;
-import OOP.Classes.Rectangle;
-import OOP.Classes.Worker;
-import OOP.Classes.Person;
-import OOP.Classes.Product;
+package oop.basics;
+
 import java.util.ArrayList;
 
 public class ClassesExercises {

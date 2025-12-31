@@ -1,3 +1,5 @@
+package basics;
+
 public class FirstExercises { // Corregido el nombre de la clase a la convención de Java (PascalCase) y la
                               // ortografía.
     public static void main(String[] args) {

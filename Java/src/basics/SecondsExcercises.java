@@ -1,3 +1,5 @@
+package basics;
+
 public class SecondsExcercises {
     public static void main(String[] args) {
         // 1. Declara una variable con mi nombre
