@@ -51,6 +51,5 @@ public class ClassesExercises {
         // 10. Crea una clase Product y un método que aplique un descuento sobre su precio.
         var product = new Product(85.0);
         System.out.println("Price on BlackFriday -> " + product.applyDiscount(60.5));
-
     }
 }

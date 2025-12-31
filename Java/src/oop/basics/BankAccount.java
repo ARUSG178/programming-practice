@@ -1,5 +1,5 @@
-package src.oop;
-package src.oop.src.oop.basics;
+package oop.basics;
+
 public class BankAccount {
     private double balance;
 
